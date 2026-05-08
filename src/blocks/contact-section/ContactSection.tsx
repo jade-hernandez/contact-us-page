@@ -56,12 +56,12 @@ function ContactSection() {
         <div className='flex max-w-304 flex-col gap-12 md:gap-16 lg:flex-row lg:gap-8'>
           <div className='flex w-full flex-col items-start justify-between gap-10 md:gap-12 lg:max-w-[calc(50%-16px)] lg:py-2.75'>
             <div className='flex flex-col gap-5'>
-              <h2
+              <h1
                 id='contact-heading'
                 className='text-4xl font-semibold text-neutral-900 md:text-5xl lg:text-6xl'
               >
                 Talk to our team
-              </h2>
+              </h1>
               <p className='max-w-150 text-lg text-neutral-600 md:max-w-full md:text-xl'>
                 We're committed to delivering the support you require to make your experience as
                 smooth as possible.
