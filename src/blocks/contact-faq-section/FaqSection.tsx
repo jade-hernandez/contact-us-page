@@ -1,8 +1,8 @@
 import { Button } from "../../components/ui/Button";
 import { Link } from "../../components/ui/Link";
 
-import { FaqItem } from "./faqItem";
 import { faqContentData } from "./faq-data";
+import { FaqItem } from "./FaqItem";
 
 function FaqSection() {
   return (
