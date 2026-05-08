@@ -1,9 +1,7 @@
 import { Navbar } from "./blocks/navigation/Navbar";
 
-import { HeroSection } from "./blocks/hero-section/HeroSection";
-import { StatisticsSection } from "./blocks/statistics-section/StatisticsSection";
-import { TeamSection } from "./blocks/team-section/TeamSection";
 import { ContactSection } from "./blocks/contact-section/ContactSection";
+import { FaqSection } from "./blocks/contact-faq-section/faqSection";
 
 import { Footer } from "./blocks/footer/Footer";
 
@@ -16,10 +14,8 @@ function App() {
       <Navbar />
       <div className='mt-4 flex w-full flex-col rounded-md bg-white'>
         <main className='flex flex-col'>
-          <HeroSection />
-          <StatisticsSection />
-          <TeamSection />
           <ContactSection />
+          <FaqSection />
         </main>
         <Footer />
       </div>
