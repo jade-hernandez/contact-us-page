@@ -1,7 +1,7 @@
 import { Navbar } from "./blocks/navigation/Navbar";
 
 import { ContactSection } from "./blocks/contact-section/ContactSection";
-import { FaqSection } from "./blocks/contact-faq-section/FaqSection";
+import { FaqSection } from "./blocks/faq-section/FaqSection";
 
 import { Footer } from "./blocks/footer/Footer";
 
