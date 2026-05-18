@@ -4,6 +4,12 @@ import { Link } from "../../components/ui/Link";
 import { faqContentData } from "./faq-data";
 import { FaqItem } from "./FaqItem";
 
+function scrollToContact() {
+  const nameInput = document.getElementById("name");
+  nameInput?.scrollIntoView({ behavior: "smooth", block: "center" });
+  nameInput?.focus();
+}
+
 function FaqSection() {
   return (
     <section
@@ -37,10 +43,14 @@ function FaqSection() {
             <p className='text-base text-neutral-600'>
               Reach out to our{" "}
               <Link
-                href='mailto:support@mail.com'
+                href='#'
                 variant='linkColor'
                 size='lg-link'
                 className='inline'
+                onClick={e => {
+                  e.preventDefault();
+                  scrollToContact();
+                }}
               >
                 customer support
               </Link>{" "}
@@ -51,6 +61,7 @@ function FaqSection() {
             variant='primary'
             size='lg'
             className='md:max-w-34.5'
+            onClick={scrollToContact}
           >
             Get in touch
           </Button>
