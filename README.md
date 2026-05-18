@@ -1,4 +1,4 @@
-# Features Page Section
+# Contact Us Page Section
 
 ## Live site URL
 

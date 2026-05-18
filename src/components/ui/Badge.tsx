@@ -3,7 +3,7 @@ export type BadgeProps = {
   classNames: string;
 };
 
-function Badge({ label, classNames }: Readonly<BadgeProps>) {
+function Badge({ label, classNames }: BadgeProps) {
   return (
     <div
       className={
