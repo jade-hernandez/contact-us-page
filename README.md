@@ -8,9 +8,16 @@ A responsive contact page built as part of the [GreatFrontEnd Projects](https://
 
 ## Challenge
 
-This project is a GreatFrontEnd challenge that focuses on combining components I had already built in previous challenges.
-The goal is to combine a Navbar, Contact Section, FAQ Section, and Footer into a cohesive page while respecting layout rules, responsive behavior, and inter-section interactions.
-The key interaction requirement: clicking "Get in touch" or "customer support" in the FAQ section smooth-scrolls to the contact form and focuses the Name input.
+This project is a GreatFrontEnd challenge that focuses on assembling previously built components into a complete contact page. The goal is to combine a Navbar, Contact Section, FAQ Section, and Footer into a cohesive page while respecting layout rules, responsive behavior, and cross-section interactions. The main technical requirement is wiring the FAQ section's "Get in touch" and "customer support" links to smooth-scroll to the contact form and focus the Name input.
+
+## Features
+
+- **Contact form** — Contact form with validation, submits to the GreatFrontEnd API endpoint, and swaps in a success state or error toast depending on the response.
+- **FAQ-to-contact scroll interaction** — clicking "Get in touch" or "customer support" in the FAQ section scrolls the Name field into view and focuses it.
+- **Independent FAQ accordions** — each `FaqItem` wraps its own Radix `Accordion.Root`, so expanding one item doesn't affect the others.
+- **Mobile menu with focus trap** — slide-in drawer rendered via `Portal`, closes on Escape or overlay click, traps keyboard focus with `useFocusTrap`.
+- **Scroll-aware sticky navbar** - Background switches to blurred white as the page scrolls.
+- **Care for A11y** — semantic HTML, ARIA attributes, WAI-ARIA patterns.
 
 ## Stack
 
@@ -21,36 +28,20 @@ The key interaction requirement: clicking "Get in touch" or "customer support" i
 - **CVA** — To manage component variants in a structured way.
 - **clsx** + **tailwind-merge** - To prevent CSS precedence issues.
 
-## Features
-
-- Contact form with validation, submitted to the GreatFrontEnd API endpoint
-- Success and error states with accessible feedback
-- Smooth scroll + focus management from FAQ to contact form
-- Sticky navbar with scroll-aware background
-- Responsive mobile menu with focus trap and keyboard navigation
-- Care for A11y — semantic HTML, ARIA attributes, WAI-ARIA patterns
-
-## Code Conventions
-
-- **Named exports** via `export { }` at the bottom of each file.
-- **`type`** over `interface` for all type definitions.
-- **kebab-case** for everything non-React.
-- **camelCase** for hooks.
-- **PascalCase** for component files.
-
 ## Project Structure
 
 ```
 src/
 ├── blocks/
-│   ├── contact-section/     # Contact form, success state, form logic
-│   ├── faq-section/         # FAQ accordion with scroll-to-contact interaction
-│   ├── footer/              # Footer with social icons
-│   └── navigation/          # Navbar and mobile menu
+│   ├── contact-section/   # ContactSection, FormSuccess, useContactForm reducer
+│   ├── faq-section/       # FaqSection, FaqItem, faq data, open/close icons
+│   ├── footer/             # Footer, footer link/icon data, social icons
+│   └── navigation/         # Navbar, MobileMenu, nav link data, icons
 ├── components/
-│   └── ui/                  # Button, Link, Textarea, Toast, Accordion, Badge, Portal
-├── hooks/                   # useMediaQuery, useFocusTrap
-└── utils/                   # cn(), validateEmail()
+│   └── ui/                 # Button, Link, Textarea, Toast, Badge, Portal, Accordion, button-variants
+├── hooks/                  # useMediaQuery, useFocusTrap
+├── utils/                  # cn(), validateEmail()
+├── App.tsx                 # Page composition: Navbar, ContactSection, FaqSection, Footer
 ```
 
 ## Getting Started
@@ -62,3 +53,11 @@ pnpm build
 pnpm lint
 pnpm format
 ```
+
+## Code Conventions
+
+- **Named exports** via `export { }` at the bottom of each file.
+- **`type`** over `interface` for all type definitions.
+- **kebab-case** for everything non-React.
+- **camelCase** for hooks.
+- **PascalCase** for component files.
